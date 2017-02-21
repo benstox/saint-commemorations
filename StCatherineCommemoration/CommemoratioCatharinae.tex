@@ -31,8 +31,8 @@
 \renewcommand{\gresixstar}{\textcolor{benred8}{\oldgresixstar}}
 
 % MAKES ALL \gredaggers RED
-\let\oldgredagger\gredagger
-\renewcommand{\gredagger}{\textcolor{benred8}{\oldgredagger}}
+% \let\oldgredagger\gredagger
+% \renewcommand{\gredagger}{\textcolor{benred8}{\oldgredagger}}
 
 % MAKES ALL \Vbars RED
 \let\oldVbar\Vbar
@@ -69,8 +69,8 @@
 
 % Here we set the space around the initial.
 % Please report to http://home.gna.org/gregorio/gregoriotex/details for more details and options
-\setspaceafterinitial{2.2mm plus 0em minus 0em}
-\setspacebeforeinitial{2.2mm plus 0em minus 0em}
+% \setspaceafterinitial{2.2mm plus 0em minus 0em}
+% \setspacebeforeinitial{2.2mm plus 0em minus 0em}
 
 % Here we set the initial font. Change 43 if you want a bigger initial.
 \def\greinitialformat#1{%
@@ -83,7 +83,7 @@
 }
 
 % We set IV above the initial. Had to adjust position a bit with \raisebox:
-\gresetfirstlineaboveinitial{\raisebox{-0.30cm}{\textcolor{benred8}{\small \textsc{\textbf{I}}}}}{}
+% \gresetfirstlineaboveinitial{\raisebox{-0.30cm}{\textcolor{benred8}{\small \textsc{\textbf{I}}}}}{}
 
 %\gresetfirstlineaboveinitial{\textcolor{benred8}{\small \textsc{\textbf{IV}}}}{}
 
@@ -97,7 +97,7 @@
 %%%%%%%%%%%%%%%%%%%%
 
 
-\includescore{virgosanctacatharina_score.tex}
+\gregorioscore[a]{virgosanctacatharina_score.gtex} % a = compile gabc files if necessary
 
 \begin{response}
 \Vbar\ Diff\'{u}sa est gr\'{a}tia in labiis tuis.
