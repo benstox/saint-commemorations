@@ -26,13 +26,13 @@
 % MAKES Ps : TEXT
 \def\psalm{\textit{\textcolor{benred8}{Ps :}}}
 
-% MAKES ALL \gresixstars RED
-\let\oldgresixstar\gresixstar
-\renewcommand{\gresixstar}{\textcolor{benred8}{\oldgresixstar}}
+% MAKES ALL \GreStars RED
+\let\OldGreStar\GreStar
+\renewcommand{\GreStar}{\textcolor{benred8}{\OldGreStar}}
 
 % MAKES ALL \gredaggers RED
-\let\oldgredagger\gredagger
-\renewcommand{\gredagger}{\textcolor{benred8}{\oldgredagger}}
+\let\OldGreDagger\GreDagger
+\renewcommand{\GreDagger}{\textcolor{benred8}{\OldGreDagger}}
 
 % MAKES ALL \Vbars RED
 \let\oldVbar\Vbar
@@ -53,73 +53,36 @@
 % RESPONSE ENVIRONMENT
 \newenvironment{response}{\leftskip 0in \setlength{\parindent}{0in}}{\vspace{2 mm}}
 
+%%%%%%%%%%%%
+% DOCUMENT %
+%%%%%%%%%%%%
+
 \begin{document}
 
 \pagestyle{empty}
 
 \begin{center}
+	\includegraphics[width=8.5cm]{Saint-Bede-the-Venerable.jpg}
 
-\includegraphics[width=8.5cm]{Saint-Bede-the-Venerable.jpg}
+	\vspace{0.5cm}
 
-\vspace{0.5cm}
-
-\begin{Large}\textsc{\textcolor{benred8}{Commemoratio de Sancto Beda.}}\end{Large}
-
+	\begin{Large}\textsc{\textcolor{benred8}{Commemoratio de Sancto Beda.}}\end{Large}
 \end{center}
 
-%\vspace*{-5.0mm}
-
-% Here we set the space around the initial.
-% Please report to http://home.gna.org/gregorio/gregoriotex/details for more details and options
-\setspaceafterinitial{2.2mm plus 0em minus 0em}
-\setspacebeforeinitial{2.2mm plus 0em minus 0em}
-
-% Here we set the initial font. Change 43 if you want a bigger initial.
-\def\greinitialformat#1{%
-{\fontsize{43}{43}\selectfont #1}%
-}
-
-% Here we set the oversize initial font.
-\def\grebiginitialformat#1{%
-{\fontsize{120}{120}\selectfont #1}%
-}
-
-% We set IV above the initial. Had to adjust position a bit with \raisebox:
-\gresetfirstlineaboveinitial{\raisebox{-0.30cm}{\textcolor{benred8}{\small \textsc{\textbf{II}}}}}{}
-
-%\gresetfirstlineaboveinitial{\textcolor{benred8}{\small \textsc{\textbf{IV}}}}{}
-
-%%%%%%%%%%%%%%%%%%%%
-% ADJUSTING THE POSITION OF THE INITIAL
-% FROM INSIDE resurrexi_score.tex :
-% NORMALLY:
-% \greinitial{R}%
-% REPLACED WITH:
-% \raisebox{0.70cm}{\greinitial{R}}%
-%%%%%%%%%%%%%%%%%%%%
-
-
-\includescore{odoctoroptime_score.tex}
+\grechangestyle{annotation}{\color{benred8}}
+\gregorioscore[a]{odoctoroptime_score.gtex} % a = compile gabc files if necessary
 
 \begin{response}
-\Vbar\ Am\'{a}vit eum D\'{o}minus, et orn\'{a}vit eum.
+	\Vbar\ Am\'{a}vit eum D\'{o}minus, et orn\'{a}vit eum.
 
-\Rbar\ Stolam gl\'{o}ri\ae\ \'{i}nduit eum.
-
+	\Rbar\ Stolam gl\'{o}ri\ae\ \'{i}nduit eum.
 \end{response}
 
 \subsubsection*{\textcolor{black}{Or\'{e}mus.}\capitulumSpace \emph{Oratio.}}
 
-\begin{response}\lettrine{D}{e}us, qui Eccl\'{e}siam tuam be\'{a}ti Bed\ae\ Confess\'{o}ris tui atque Doct\'{o}ris eruditi\'{o}ne clar\'{i}ficas~:~\gredagger\ conc\'{e}de prop\'{i}tius f\'{a}mulis tuis, \gresixstar\ ejus semper illustr\'{a}ri sapi\'{e}ntia et m\'{e}ritis adjuv\'{a}ri. Per~D\'{o}minum nostrum Jesum Christum F\'{i}lium tuum : qui tecum vivit et regnat in unit\'{a}te Sp\'{i}ritus Sancti Deus, per \'{o}mnia s\'{\ae}cula s\ae cul\'{o}rum. \Rbar\ Amen.
+\begin{response}
+\lettrine{D}{e}us, qui Eccl\'{e}siam tuam be\'{a}ti Bed\ae\ Confess\'{o}ris tui atque Doct\'{o}ris eruditi\'{o}ne clar\'{i}ficas~:~\GreDagger\ conc\'{e}de prop\'{i}tius f\'{a}mulis tuis, \GreStar\ ejus semper illustr\'{a}ri sapi\'{e}ntia et m\'{e}ritis adjuv\'{a}ri. Per~D\'{o}minum nostrum Jesum Christum F\'{i}lium tuum : qui tecum vivit et regnat in unit\'{a}te Sp\'{i}ritus Sancti Deus, per \'{o}mnia s\'{\ae}cula s\ae cul\'{o}rum. \Rbar\ Amen.
 
 \end{response}
-
-
-%\begin{center}\begin{Large}\textsc{\textcolor{benred8}{Gradual.}}\end{Large}\end{center}
-
-% We set IV above the initial.
-%\gresetfirstlineaboveinitial{\textcolor{benred8}{\small \textsc{\textbf{II}}}}{\textcolor{benred8}{\small \textsc{\textbf{II}}}}
-
-%\includescore{haec_dies_score.tex}
 
 \end{document}
