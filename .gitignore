@@ -2,6 +2,8 @@ syntax: glob
 
 *.pdf
 *.log
+*.glog
+*.gtex
 .goutputstream-3MWXCX
 *~
 *.gaux
