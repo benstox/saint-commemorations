@@ -1,0 +1,166 @@
+\documentclass[12pt]{article} % use larger type; default would be 10pt
+
+% usual packages loading:
+\usepackage{calc}
+\usepackage{fontspec}
+\usepackage{graphicx} % support the \includegraphics command and options
+\usepackage[allowdeprecated=false]{gregoriotex} % for gregorio score inclusion
+\usepackage{fullpage} % to reduce the margins
+\usepackage{titlesec}
+\usepackage[oldstyle]{libertine}
+\usepackage{lettrine}
+\setlength{\parindent}{-0.25in}
+% for English psalm pointing
+\usepackage[normalem]{ulem}
+\setlength{\ULdepth}{2pt}
+
+% RED
+\definecolor{benred8}{HTML}{E82C00} 
+
+% BLUE
+\definecolor{benblue1}{HTML}{2B22C7}
+
+% YELLOWS
+\definecolor{benyellow1}{HTML}{FFD435}
+\definecolor{benyellow2}{HTML}{7C6F3B}
+
+% DEFINE THE FORMATTING OF
+% PSALM TEXT
+\newenvironment{psalmtext}{\leftskip 0.25in}{\vspace{2 mm}}
+\newenvironment{rubric}{\color{benred8} \itshape \leftskip 0in \setlength{\parindent}{0.25in}}{\vspace{2 mm}}
+\newenvironment{response}{\leftskip 0in \setlength{\parindent}{0in}}{\vspace{2 mm}}
+\newenvironment{lettrinePar}
+  {\par\leftskip=0.30in \rightskip=0em}
+  {\par} % since switching to reledpar from eledpar lettrine no longer seems to work properly!
+         % this environment is a compromise
+
+% REDUCES SUBSECTION SPACE
+\def\subspace{\vspace{-13 mm}}
+
+% MAKES Flexa : TEXT
+\def\flex{\textit{\textcolor{benred8}{Flexa :}}}
+
+% MAKES Flex : TEXT
+\def\flexeng{\textit{\textcolor{benred8}{Flex :}}}
+
+% MAKES Cantor : TEXT
+\def\cantor{\textit{\textcolor{benred8}{Cantor :}}}
+
+% MAKES vel : TEXT
+\def\vel{\textit{\textcolor{benred8}{vel :}}}
+
+% MAKES vel : TEXT
+\def\veleng{\textit{\textcolor{benred8}{or:}}}
+
+% MAKES deinde : TEXT
+\def\deinde{\textit{\textcolor{benred8}{deinde :}}}
+
+% MAKES Repetitur : TEXT
+\def\repetitur{\textit{\textcolor{benred8}{Repetitur :}}}
+
+% MAKES Repeat: TEXT
+\def\repetitureng{\textit{\textcolor{benred8}{Repeat:}}}
+
+% MAKES secreto usque ad TEXT
+\def\secreto{\textit{\textcolor{benred8}{secreto usque ad}}}
+
+% MAKES secret until TEXT
+\def\secretoeng{\textit{\textcolor{benred8}{secret until}}}
+
+% MAKES T.P. TEXT
+\def\TemporePaschale{\textit{\textcolor{benred8}{T. P.}}}
+
+% MAKES Ps. TEXT
+\def\psalmitalic{\textit{\textcolor{benred8}{Ps.}}}
+
+% MAKES RED PIPE FOR ENGLISH CADENCES
+\def\pipe{\textcolor{benred8}{\symbol{"01C1}}}
+
+% MAKES ALL \GreStars RED
+\let\OldGreStar\GreStar
+\renewcommand{\GreStar}{\textcolor{benred8}{\OldGreStar}}
+
+% MAKES ALL \GreDaggers RED
+\let\OldGreDagger\GreDagger
+\renewcommand{\GreDagger}{\textcolor{benred8}{\OldGreDagger}}
+
+% MAKES ALL \Vbars RED
+\let\oldVbar\Vbar
+\def\VVbar{\textcolor{benred8}{\oldVbar\oldVbar .}}
+\renewcommand{\Vbar}{\textcolor{benred8}{\oldVbar .}}
+
+% MAKES ALL \Rbars RED
+\let\oldRbar\Rbar
+\renewcommand{\Rbar}{\textcolor{benred8}{\oldRbar .}}
+
+% MAKES ALL \Abars RED
+\let\oldAbar\Abar
+\renewcommand{\Abar}{\textcolor{benred8}{\oldAbar .}}
+
+% MAKES ALL \grealtcrosses RED
+\let\oldgrealtcross\grealtcross
+\renewcommand{\grealtcross}{\textcolor{benred8}{\oldgrealtcross}}
+
+% ANOTHER CROSS GLYPH USED FOR THE SIGN OF THE CROSS WITH THUMB ON CHEST
+\newcommand{\grebencross}{\fontspec{gresym3.ttf}\textcolor{benred8}{T}}
+
+% FORMAT SECTIONS - use titlesec package
+\titleformat{\section}{\centering\scshape\Huge\color{benred8}}{}{1em}{}
+\titlespacing*{\section}{0pt}{0pt}{0pt}
+
+% FORMAT SUBSECTIONS - use titlesec package
+\titleformat{\subsection}{\centering\normalfont\color{benred8}}{}{1em}{}
+\titlespacing*{\subsection}{0pt}{0pt}{0.25pt}
+
+% RED TITLE e.g Psalm number, "Oratio", "Capitulum", etc.
+\newcommand{\redTitle}[1]{{
+\centering
+\textcolor{benred8}{#1}
+
+}}
+
+
+% SPACE BETWEEN Capitulum AND BIBLE VERSE
+\def\capitulumSpace{\hspace{20 mm}}
+
+% ANNOTATION STYLE
+\grechangestyle{annotation}{\small\scshape\bfseries\color{benred8}}
+\grechangedim{annotationraise}{-3 mm}{scalable}
+
+% Sicut incensum R/ indent, e.g. versicle after first hymn at Sunday Vespers
+\newlength{\sicutIncensumIndent}
+\setlength{\sicutIncensumIndent}{2.3mm}
+
+
+\begin{document}
+
+\redTitle{Communio --- 1\textsuperscript{st} Sunday of Lent}
+
+\greannotation{III}
+\gregorioscore[a]{scapulis-suis.gtex}
+
+% \vspace{0.125in}
+
+\begin{psalmtext}
+
+Magnific\'{a}te \textbf{D\'{o}}minum \textbf{me}cum, \GreStar\ et exalt\'{e}mus nomen ejus \textit{in id}\textbf{\'{i}p}sum.
+
+Exquis\'{i}vi D\'{o}minum, \textbf{et} exau\textbf{d\'{i}}vit me ; \GreStar\ et ex \'{o}mnibus tribulati\'{o}nibus meis e\textit{r\'{i}pu}\textbf{it} me.
+
+% Accedite ad eum, et illuminamini ; \GreStar\ et facies vestrae non confundentur.
+
+% Iste pauper clamavit, et Dominus exaudivit eum, \GreStar\ et de omnibus tribulationibus ejus salvavit eum.
+
+% Immittet angelus Domini in circuitu timentium eum, \GreStar\ et eripiet eos.
+
+% Gustate, et videte quoniam suavis est Dominus ; \GreStar\ beatus vir qui sperat in eo.
+
+% Timete Dominum, omnes sancti ejus, \GreStar\ quoniam non est inopia timentibus eum.
+
+Gl\'{o}ria \textbf{Pat}ri, et \textbf{F\'{i}}lio, \GreStar\ et Spir\'{i}\textit{tui} \textbf{Sanc}to.
+
+Sicut erat in princ\'{i}pio, et \textbf{nunc}, et \textbf{sem}per, \GreStar\ et in s\'{\ae}cula s\ae cu\textit{l\'{o}rum}. \textbf{A}men.
+
+\end{psalmtext}
+
+\end{document}
