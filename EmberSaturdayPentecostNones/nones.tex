@@ -1,0 +1,287 @@
+% !TEX TS-program = lualatex
+% !TEX encoding = UTF-8
+
+\documentclass[12pt]{article} % use larger type; default would be 10pt
+
+% usual packages loading:
+\usepackage{forloop}
+\usepackage{calc}
+\usepackage{fontspec}
+\usepackage{graphicx} % support the \includegraphics command and options
+\usepackage{geometry} % See geometry.pdf to learn the layout options. There are lots.
+\geometry{a4paper} % or letterpaper (US) or a5paper or....
+\usepackage[allowdeprecated=false]{gregoriotex} % for gregorio score inclusion
+\usepackage{fullpage} % to reduce the margins
+\usepackage{titlesec}
+%\usepackage{bold-extra}
+\usepackage[oldstyle]{libertine}
+\usepackage{lettrine}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{}
+\chead{\color{benred8}\textsc{Nones --- Ember Saturday of Pentecost}}
+\rhead{}
+\lfoot{}
+\cfoot{\textcolor{benblue1}{\thepage}}
+\rfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\headsep}{25pt}
+%redefine 'plain' page style to have blue page numbers too
+\fancypagestyle{plain}{
+    \chead{}
+    \cfoot{\textcolor{benblue1}{\thepage}}
+
+}
+
+\setlength{\parindent}{-0.25in}
+\usepackage[normalem]{ulem}
+\setlength{\ULdepth}{2pt}
+% for some reason I need this next line on my Linux machine and have to comment it out on the Mac
+% (it provides the \textdoublepipe character but apparently not needed for some setups):
+\usepackage{tipa}
+
+\definecolor{benred8}{HTML}{E82C00}
+\definecolor{benblue1}{HTML}{2B22C7}
+\definecolor{benyellow1}{HTML}{FFD435}
+\definecolor{benyellow2}{HTML}{7C6F3B}
+
+
+% DEFINE THE FORMATTING OF
+% PSALM TEXT, OTHER ENVIRONMENTS, ETC
+\newenvironment{psalmtext}{\leftskip 0.25in}{\vspace{2 mm}}
+\newenvironment{rubric}{\color{benred8} \itshape \leftskip 0in \setlength{\parindent}{0.25in}}{\vspace{2 mm}}
+\newenvironment{response}{\leftskip 0in \setlength{\parindent}{0in}}{\vspace{2 mm}}
+
+% REDUCES SUBSECTION SPACE
+\def\subspace{\vspace{-13 mm}}
+
+% MAKES Flexa : TEXT
+\def\flex{\textit{\textcolor{benred8}{Flexa :}}}
+
+% MAKES Cantor : TEXT
+\def\cantor{\textit{\textcolor{benred8}{Cantor :}}}
+
+% MAKES vel : TEXT
+\def\vel{\textit{\textcolor{benred8}{vel :}}}
+
+% MAKES deinde : TEXT
+\def\deinde{\textit{\textcolor{benred8}{deinde :}}}
+
+% MAKES Repetitur : TEXT
+\def\repetitur{\textit{\textcolor{benred8}{Repetitur :}}}
+
+% MAKES secreto usque ad TEXT
+\def\secreto{\textit{\textcolor{benred8}{secreto usque ad}}}
+
+% MAKES T.P. TEXT
+\def\TemporePaschale{\textit{\textcolor{benred8}{T. P.}}}
+
+% MAKES ALL \GreStars RED
+\let\OldGreStar\GreStar
+\renewcommand{\GreStar}{\textcolor{benred8}{\OldGreStar}}
+
+% MAKES ALL \GreDaggers RED
+\let\OldGreDagger\GreDagger
+\renewcommand{\GreDagger}{\textcolor{benred8}{\OldGreDagger}}
+
+% MAKES ALL \Vbars RED
+\let\oldVbar\Vbar
+\def\VVbar{\textcolor{benred8}{\oldVbar\oldVbar .}}
+\renewcommand{\Vbar}{\textcolor{benred8}{\oldVbar .}}
+
+% MAKES ALL \Rbars RED
+\let\oldRbar\Rbar
+\renewcommand{\Rbar}{\textcolor{benred8}{\oldRbar .}}
+
+% MAKES ALL \Abars RED
+\let\oldAbar\Abar
+\renewcommand{\Abar}{\textcolor{benred8}{\oldAbar .}}
+
+% MAKES ALL \grealtcrosses RED
+\let\oldgrealtcross\grealtcross
+\renewcommand{\grealtcross}{\textcolor{benred8}{\oldgrealtcross}}
+
+% ANOTHER CROSS GLYPH USED FOR THE SIGN OF THE CROSS WITH THUMB ON CHEST
+\newcommand{\grebencross}{\fontspec{gresym3.ttf}\textcolor{benred8}{T}}
+
+% SPACE BETWEEN Capitulum AND BIBLE VERSE
+\def\capitulumSpace{\hspace{20 mm}}
+
+% MAKES RED PIPE FOR ENGLISH CADENCES
+\def\pipe{\textcolor{benred8}{\textdoublepipe}}
+
+% ANNOTATION STYLE
+\grechangestyle{annotation}{\small\scshape\bfseries\color{benred8}}
+\grechangedim{annotationraise}{-3 mm}{scalable}
+
+% FORMAT SECTIONS - use titlesec package
+\titleformat{\section}{\centering\scshape\Huge\color{benred8}}{}{1em}{}
+\titlespacing*{\section}{0pt}{0pt}{0pt}
+
+% FORMAT SUBSECTIONS - use titlesec package
+\titleformat{\subsection}{\centering\normalfont\color{benred8}}{}{1em}{}
+\titlespacing*{\subsection}{0pt}{0pt}{0.25pt}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% HERE BEGINS THE DOCUMENT %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\thispagestyle{plain}
+
+\section*{Nones
+for the Ember Saturday of Pentecost}
+
+{\centering
+Our Father.
+Hail Mary.
+
+}
+
+\gregorioscore[a]{DeusInAdjutorium.gtex}
+
+\vspace{1mm}
+
+{\centering
+\textcolor{benred8}{Hymn.}
+
+}
+
+O God, Creation’s secret Force,
+Thyself unmov’d, all motion’s source,
+Who from the morn, till ev’ning’s ray,
+Through all its changes guid’st the day:
+
+Grant us when this short life is past,
+The glorious ev’ning that shall last:
+That, by a holy death attain’d,
+Eternal glory may be gain’d.
+
+O Father, that we ask be done,
+Through Jesus Christ, Thine Only Son;
+Who, with the Holy Ghost and Thee,
+Shall live and reign eternally. Amen.
+
+% \greannotation{1 {\upshape\Abar} VIII}
+% \gregorioscore[a]{english/vespers/Ant1-01-dum_esset_rex.gtex}
+
+\vspace{-2mm}
+
+{\centering
+\textcolor{benred8}{Psalm 188.}
+\textcolor{benred8}{Phe.}
+
+}
+
+% {\gresetinitiallines{0}
+% \gregorioscore[a]{english/vespers/FL1.gtex}
+
+% }
+
+Ant. The Apostles spoke in divers tongues 
+
+(Phe) Thy testimonies are wonderful: * therefore my soul hath sought them.
+The declaration of thy words giveth light: * and giveth understanding to little ones.
+I opened my mouth, and panted: * because I longed for thy commandments.
+Look thou upon me, and have mercy on me, * according to the judgment of them that love thy name.
+Direct my steps according to thy word: * and let no iniquity have dominion over me.
+Redeem me from the calumnies of men: * that I may keep thy commandments.
+Make thy face to shine upon thy servant: * and teach me thy justifications.
+My eyes have sent forth springs of water: * because they have not kept thy law.
+(Sade) Thou art just, O Lord: * and thy judgment is right.
+Thou hast commanded justice thy testimonies: * and thy truth exceedingly.
+My zeal hath made me pine away: * because my enemies forgot thy words.
+Thy word is exceedingly refined: * and thy servant hath loved it.
+I am very young and despised; but * I forget not thy justifications.
+Thy justice is justice for ever: * and thy law is the truth.
+Trouble and anguish have found me: * thy commandments are my meditation.
+Thy testimonies are justice for ever: * give me understanding, and I shall live.
+Glory be to the Father, and to the Son, * and to the Holy Ghost. 
+As it was in the beginning, is now, * and ever shall be, world without end. Amen.
+
+(Coph) I cried with my whole heart, hear me, O Lord: * I will seek thy justifications.
+I cried unto thee, save me: * that I may keep thy commandments.
+I prevented the dawning of the day, and cried: * because in thy words I very much hoped.
+My eyes to thee have prevented the morning: * that I might meditate on thy words.
+Hear thou my voice, O Lord, according to thy mercy: * and quicken me according to thy judgment.
+They that persecute me have drawn nigh to iniquity; * but they are gone far off from thy law.
+Thou art near, O Lord: * and all thy ways are truth.
+I have known from the beginning concerning thy testimonies: * that thou hast founded them for ever.
+(Res) See my humiliation and deliver me: * for I have not forgotten thy law.
+Judge my judgment and redeem me: * quicken thou me for thy word’s sake.
+Salvation is far from sinners; * because they have not sought thy justifications.
+Many, O Lord, are thy mercies: * quicken me according to thy judgment.
+Many are they that persecute me, and afflict me; * but I have not declined from thy testimonies.
+I beheld the transgressors, and I pined away; * because they kept not thy word.
+Behold I have loved thy commandments, O Lord; * quicken me thou in thy mercy.
+The beginning of thy words is truth: * all the judgments of thy justice are for ever.
+Glory be to the Father, and to the Son, * and to the Holy Ghost. 
+As it was in the beginning, is now, * and ever shall be, world without end. Amen.
+
+(Sin) Princes have persecuted me without cause: * and my heart hath been in awe of thy words.
+I will rejoice at thy words, * as one that hath found great spoil.
+I have hated and abhorred iniquity; * but I have loved thy law.
+Seven times a day I have given praise to thee, * for the judgments of thy justice.
+Much peace have they that love thy law, * and to them there is no stumbling-block.
+I looked for thy salvation, O Lord: * and I loved thy commandments.
+My soul hath kept thy testimonies: * and hath loved them exceedingly.
+I have kept thy commandments and thy testimonies: * because all my ways are in thy sight.
+(Tau) Let my supplication, O Lord, come near in thy sight: * give me understanding according to thy word.
+Let my request come in before thee; * deliver thou me according to thy word.
+My lips shall utter a hymn, * when thou shalt teach me thy justifications.
+My tongue shall pronounce thy word: * because all thy commandments are justice.
+Let thy hand be with me to save me; * for I have chosen thy precepts.
+I have longed for thy salvation, O Lord; * and thy law is my meditation.
+My soul shall live and shall praise thee: * and thy judgments shall help me.
+I have gone astray like a sheep that is lost: * seek thy servant, because I have not forgotten thy commandments.
+Glory be to the Father, and to the Son, * and to the Holy Ghost. 
+As it was in the beginning, is now, * and ever shall be, world without end. Amen.
+
+Ant. The Apostles spoke in divers tongues the wonderful works of God, alleluia, alleluia, alleluia.
+
+
+
+
+Chapter Responsory Verse {from the Common or Feast} 
+Acts 2:11
+Jews also, and Proselytes, Cretes and Arabians, we do hear them speak in our tongues the wonderful works of God.
+R. Thanks be to God.
+
+R.br. They were all filled with the Holy Ghost. * Alleluia, Alleluia.
+R. They were all filled with the Holy Ghost. * Alleluia, Alleluia.
+V. And began to speak.
+R. Alleluia, alleluia.
+V. Glory be to the Father, and to the Son, * and to the Holy Ghost.
+R. They were all filled with the Holy Ghost. * Alleluia, Alleluia.
+
+V. The Apostles spoke in divers tongues, alleluia.
+R. The wonderful works of God, alleluia.
+
+
+
+Prayer {from the Proper of the season} 
+V. O Lord, hear my prayer.
+R. And let my cry come unto thee.
+Let us pray.
+We beseech Thee, O Lord, mercifully to pour into our hearts Thy Holy Spirit, by Whose Wisdom we have been created, and by Whose Providence all our ways are ordered.
+Through Jesus Christ, thy Son our Lord, Who liveth and reigneth with thee, in the unity of the same Holy Ghost, ever one God, world without end.
+R. Amen.
+
+
+
+Conclusion 
+V. O Lord, hear my prayer.
+R. And let my cry come unto thee.
+V. Let us bless the Lord.
+R. Thanks be to God.
+V. May the souls of the faithful, through the mercy of God, rest in peace.
+R. Amen.
+Our Father, who art in heaven, Hallowed be thy name. Thy kingdom come. Thy will be done on earth as it is in heaven. Give us this day our daily bread. And forgive us our trespasses, as we forgive those who trespass against us. And lead us not into temptation: But deliver us from evil. Amen.
+
+
+
+
+
+\end{document}
