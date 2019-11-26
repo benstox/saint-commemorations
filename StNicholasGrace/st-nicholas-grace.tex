@@ -1,0 +1,256 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage{geometry}
+\geometry{left=0.5in, right=0.5in, top=0.75in, bottom=0.5in}
+
+\usepackage[utf8]{inputenc}
+\usepackage{fontspec}
+\usepackage{graphicx}
+\usepackage[allowdeprecated=false]{gregoriotex}
+\usepackage{titlesec}
+\usepackage[oldstyle]{libertine}
+
+% RED
+\definecolor{benred8}{HTML}{E82C00} 
+
+% BLUE
+\definecolor{benblue1}{HTML}{2B22C7}
+
+% YELLOWS
+\definecolor{benyellow1}{HTML}{FFD435}
+\definecolor{benyellow2}{HTML}{7C6F3B}
+
+% DEFINE THE FORMATTING OF
+% PSALM TEXT
+\newenvironment{psalmtext}{\leftskip 0.25in}{\vspace{2 mm}}
+\newenvironment{rubric}{\color{benred8} \itshape \leftskip 0in \setlength{\parindent}{0.25in}}{\vspace{2 mm}}
+\newenvironment{response}{\leftskip 0in \setlength{\parindent}{0in}}{\vspace{2 mm}}
+\newenvironment{lettrinePar}
+  {\par\leftskip=0.30in \rightskip=0em}
+  {\par} % since switching to reledpar from eledpar lettrine no longer seems to work properly!
+         % this environment is a compromise
+
+% REDUCES SUBSECTION SPACE
+\def\subspace{\vspace{-13 mm}}
+
+% MAKES Flexa : TEXT
+\def\flex{\textit{\textcolor{benred8}{Flexa :}}}
+
+% MAKES Flex : TEXT
+\def\flexeng{\textit{\textcolor{benred8}{Flex :}}}
+
+% MAKES Cantor : TEXT
+\def\cantor{\textit{\textcolor{benred8}{Cantor :}}}
+
+% MAKES vel : TEXT
+\def\vel{\textit{\textcolor{benred8}{vel :}}}
+
+% MAKES vel : TEXT
+\def\veleng{\textit{\textcolor{benred8}{or:}}}
+
+% MAKES deinde : TEXT
+\def\deinde{\textit{\textcolor{benred8}{deinde :}}}
+
+% MAKES Repetitur : TEXT
+\def\repetitur{\textit{\textcolor{benred8}{Repetitur :}}}
+
+% MAKES Repeat: TEXT
+\def\repetitureng{\textit{\textcolor{benred8}{Repeat:}}}
+
+% MAKES secreto usque ad TEXT
+\def\secreto{\textit{\textcolor{benred8}{secreto usque ad}}}
+
+% MAKES secret until TEXT
+\def\secretoeng{\textit{\textcolor{benred8}{secret until}}}
+
+% MAKES T.P. TEXT
+\def\TemporePaschale{\textit{\textcolor{benred8}{T. P.}}}
+
+% MAKES Ps. TEXT
+\def\psalmitalic{\textit{\textcolor{benred8}{Ps.}}}
+
+% MAKES RED PIPE FOR ENGLISH CADENCES
+\def\pipe{\textcolor{benred8}{\symbol{"01C1}}}
+
+% MAKES ALL \GreStars RED
+\let\OldGreStar\GreStar
+\renewcommand{\GreStar}{\textcolor{benred8}{\OldGreStar}}
+
+% MAKES ALL \GreDaggers RED
+\let\OldGreDagger\GreDagger
+\renewcommand{\GreDagger}{\textcolor{benred8}{\OldGreDagger}}
+
+% MAKES ALL \Vbars RED
+\let\oldVbar\Vbar
+\def\VVbar{\textcolor{benred8}{\oldVbar\oldVbar .}}
+\renewcommand{\Vbar}{\textcolor{benred8}{\oldVbar .}}
+
+% MAKES ALL \Rbars RED
+\let\oldRbar\Rbar
+\renewcommand{\Rbar}{\textcolor{benred8}{\oldRbar .}}
+
+% MAKES ALL \Abars RED
+\let\oldAbar\Abar
+\renewcommand{\Abar}{\textcolor{benred8}{\oldAbar .}}
+
+% MAKES ALL \grealtcrosses RED
+\let\oldgrealtcross\grealtcross
+\renewcommand{\grealtcross}{\textcolor{benred8}{\oldgrealtcross}}
+
+% ANOTHER CROSS GLYPH USED FOR THE SIGN OF THE CROSS WITH THUMB ON CHEST
+\newcommand{\grebencross}{\fontspec{gresym3.ttf}\textcolor{benred8}{T}}
+
+% FORMAT SECTIONS - use titlesec package
+\titleformat{\section}{\centering\scshape\Huge\color{benred8}}{}{1em}{}
+\titlespacing*{\section}{0pt}{0pt}{0pt}
+
+% FORMAT SUBSECTIONS - use titlesec package
+\titleformat{\subsection}{\centering\normalfont\color{benred8}}{}{1em}{}
+\titlespacing*{\subsection}{0pt}{0pt}{0.25pt}
+
+% RED TITLE e.g Psalm number, "Oratio", "Capitulum", etc.
+\newcommand{\redTitle}[1]{{
+\centering
+\textcolor{benred8}{#1}
+
+}}
+
+
+% SPACE BETWEEN Capitulum AND BIBLE VERSE
+\def\capitulumSpace{\hspace{20 mm}}
+
+% ANNOTATION STYLE
+\grechangestyle{annotation}{\small\scshape\bfseries\color{benred8}}
+\grechangedim{annotationraise}{-3 mm}{scalable}
+
+% Sicut incensum R/ indent, e.g. versicle after first hymn at Sunday Vespers
+\newlength{\sicutIncensumIndent}
+\setlength{\sicutIncensumIndent}{2.3mm}
+
+\newfontfamily\unicodefont{Cardo-Regular.ttf}
+\newlength{\betweenscores}
+\setlength{\betweenscores}{2.5mm}
+
+
+% HERE BEGINS THE DOCUMENT!!
+\begin{document}
+
+\thispagestyle{empty}
+
+\section*{Grace for the feast of St Nicholas}
+
+\begin{large}
+\redTitle{\textsc{Grace before the Meal}}
+
+\end{large}
+
+\vspace{\betweenscores}
+
+\greannotation{{\upshape\Vbar}}
+\gregorioscore[a]{benedicite.gtex}
+
+\redTitle{The Legend of St Nicholas.}
+
+\greannotation{{\upshape\Vbar}}
+\gregorioscore[a]{sanctus-quidem-triticum.gtex}
+
+\vspace{\betweenscores}
+
+\greannotation{{\upshape\Vbar}}
+\gregorioscore[a]{kyrie.gtex}
+
+\vspace{\betweenscores}
+
+\gregorioscore[a]{pater-noster.gtex}
+
+\vspace{\betweenscores}
+
+\gregorioscore[a]{benedic-domine.gtex}
+
+\vspace{\betweenscores}
+
+\begin{rubric}
+The Lector asks:
+
+\end{rubric}
+
+\gregorioscore[a]{jube-domine.gtex}
+
+\vspace{\betweenscores}
+
+\greannotation{{\upshape\Vbar}}
+\gregorioscore[a]{mensae-caelestis.gtex}
+
+\begin{Huge}
+\redTitle{{\unicodefont ∵}}
+
+\end{Huge}
+
+
+% SECOND PAGE!!
+\newpage
+
+\thispagestyle{empty}
+
+\begin{large}
+\redTitle{\textsc{Grace after the Meal}}
+
+\end{large}
+
+\vspace{-2mm}
+
+\begin{rubric}
+The Lector begins:
+
+\end{rubric}
+
+\greannotation{{\upshape\Vbar}}
+\gregorioscore[a]{tu-autem-domine.gtex}
+
+\redTitle{The Legend of St Nicholas.}
+
+\greannotation{{\upshape\Vbar}}
+\gregorioscore[a]{tempestate-quassati.gtex}
+
+\vspace{\betweenscores}
+
+\gregorioscore[a]{agimus-tibi.gtex}
+
+\redTitle{Psalm 116.}
+
+\greannotation{VI}
+\gregorioscore[a]{psalm116.gtex}
+
+\begin{psalmtext}
+\textit{Quóni}am confirmáta est super nos misericórdi\textit{a} \textbf{e}jus : \GreStar\ et véritas Dómini manet \textit{in æ}\textbf{tér}num.
+
+\textit{Glóri}a Patri, \textit{et} \textbf{Fí}lio, \GreStar\ et Spirí\textit{tui} \textbf{Sanc}to.
+
+\textit{Sicut} erat in princípio, et nunc, \textit{et} \textbf{sem}per, \GreStar\ et in sǽcula sæcu\textit{lórum}. \textbf{A}men.
+
+\end{psalmtext}
+
+\begin{rubric}
+Then \textcolor{black}{\emph{Kýrie}} and \textcolor{black}{\emph{Pater noster}} as at the Grace before the meal.
+
+\end{rubric}
+
+\greannotation{{\upshape\Vbar}}
+\gregorioscore[a]{retribuere.gtex}
+
+\vspace{\betweenscores}
+
+\greannotation{{\upshape\Vbar}}
+\gregorioscore[a]{benedicamus-domino.gtex}
+
+\vspace{\betweenscores}
+
+\greannotation{{\upshape\Vbar}}
+\gregorioscore[a]{fidelium-animae.gtex}
+
+\begin{Huge}
+\redTitle{{\unicodefont ∵}}
+
+\end{Huge}
+
+\end{document}
